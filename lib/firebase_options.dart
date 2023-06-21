@@ -54,16 +54,17 @@ class DefaultFirebaseOptions {
     appId: '1:822032160446:android:383a2ef8746d559b3f70ef',
     messagingSenderId: '822032160446',
     projectId: 'instagram-clone-osama',
-    storageBucket: 'instagram-clone-osama.appspot.com',
+    storageBucket: 'instagram-clone-example.appspot.com',
   );
 
   static const FirebaseOptions ios = FirebaseOptions(
     apiKey: 'AIzaSyBT5H1WG55tuDvNZOdaqiGUohRhQHx5N4k',
     appId: '1:822032160446:ios:fbbc72179f5bfc193f70ef',
     messagingSenderId: '822032160446',
-    projectId: 'instagram-clone-osama',
-    storageBucket: 'instagram-clone-osama.appspot.com',
-    iosClientId: '822032160446-ecu0nct499aqf9e81a6mlrdjcqi1qif2.apps.googleusercontent.com',
-    iosBundleId: 'com.example.instagramClone',
+    projectId: 'instagram-clone-example',
+    storageBucket: 'instagram-clone-example.appspot.com',
+    iosClientId:
+        '822032160446-ecu0nct499aqf9e81a6mlrdjcqi1qif2.apps.googleusercontent.com',
+    iosBundleId: 'com.example.instagram_clone',
   );
 }

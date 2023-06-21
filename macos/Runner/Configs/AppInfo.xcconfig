@@ -8,7 +8,7 @@
 PRODUCT_NAME = instagram_clone
 
 // The application's bundle identifier
-PRODUCT_BUNDLE_IDENTIFIER = com.example.instagramClone
+PRODUCT_BUNDLE_IDENTIFIER = com.osamaali2023.instagram_clone
 
 // The copyright displayed in application information
-PRODUCT_COPYRIGHT = Copyright © 2023 com.example. All rights reserved.
+PRODUCT_COPYRIGHT = Copyright © 2023 com.osamaali2023. All rights reserved.

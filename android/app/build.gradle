@@ -52,6 +52,9 @@ android {
         targetSdkVersion flutter.targetSdkVersion
         versionCode flutterVersionCode.toInteger()
         versionName flutterVersionName
+        defaultConfig {
+            minSdkVersion 21
+        }
     }
 
     buildTypes {
@@ -69,4 +72,5 @@ flutter {
 
 dependencies {
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+    implementation 'com.facebook.android:facebook-android-sdk:latest.release'
 }

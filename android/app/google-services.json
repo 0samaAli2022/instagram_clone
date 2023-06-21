@@ -1,8 +1,8 @@
 {
   "project_info": {
     "project_number": "822032160446",
-    "project_id": "instagram-clone-osama",
-    "storage_bucket": "instagram-clone-osama.appspot.com"
+    "project_id": "instagram-clone-example",
+    "storage_bucket": "instagram-clone-example.appspot.com"
   },
   "client": [
     {
@@ -13,6 +13,14 @@
         }
       },
       "oauth_client": [
+        {
+          "client_id": "822032160446-0dvj4pe8a38eci636a19jul1oentedq3.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.instagram_clone",
+            "certificate_hash": "5684ac544149f7356452ff8dc72858e4a71163ba"
+          }
+        },
         {
           "client_id": "822032160446-1g5qehu60f9i2sobqbuhbuai7r5t56f5.apps.googleusercontent.com",
           "client_type": 3
@@ -29,6 +37,13 @@
             {
               "client_id": "822032160446-1g5qehu60f9i2sobqbuhbuai7r5t56f5.apps.googleusercontent.com",
               "client_type": 3
+            },
+            {
+              "client_id": "822032160446-ecu0nct499aqf9e81a6mlrdjcqi1qif2.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.instagramClone"
+              }
             }
           ]
         }
