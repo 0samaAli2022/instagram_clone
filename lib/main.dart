@@ -5,6 +5,8 @@ import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:instagram_clone/state/auth/providers/auth_state_provider.dart';
 import 'package:instagram_clone/state/auth/providers/is_logged_in_provider.dart';
 import 'package:instagram_clone/utils/loading_dialog.dart';
+import 'package:instagram_clone/views/components/animations/animation_views.dart';
+import 'package:instagram_clone/views/components/animations/empty_contents_with_text_animation_view.dart';
 import 'package:instagram_clone/views/components/constants/strings.dart';
 import 'package:instagram_clone/views/login/login_view.dart';
 import 'firebase_options.dart';
@@ -37,7 +39,7 @@ class App extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       home: Consumer(
         builder: (context, ref, child) {
-          final isLoggedIn = ref.watch(isLoggedInProvider); 
+          final isLoggedIn = ref.watch(isLoggedInProvider);
           return isLoggedIn ? const MainView() : const LoginView();
         },
       ),
@@ -57,14 +59,15 @@ class MainView extends StatelessWidget {
       ),
       body: Consumer(
         builder: (context, ref, child) {
-          return TextButton(
-            onPressed: () async {
-              loadingScrean(context, Strings.loading);
-              await ref.read(authStateProvider.notifier).logOut();
-              Navigator.of(context).pop();
-            },
-            child: const Text('Log Out!'),
-          );
+          return LoadingAnimationView();
+          // return TextButton(
+          //   onPressed: () async {
+          //     loadingScrean(context, Strings.loading);
+          //     await ref.read(authStateProvider.notifier).logOut();
+          //     Navigator.of(context).pop();
+          //   },
+          //   child: const Text('Log Out!'),
+          // );
         },
       ),
     );
