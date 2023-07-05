@@ -10,7 +10,7 @@ class LottieAnimationView extends StatelessWidget {
     super.key,
     required this.animation,
     this.repeat = true,
-    this.reverse = true,
+    this.reverse = false,
   });
 
   @override

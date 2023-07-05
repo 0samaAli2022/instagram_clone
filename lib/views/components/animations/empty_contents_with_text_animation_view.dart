@@ -11,19 +11,20 @@ class EmptyContentsWithTextAnimationView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Center(
-      child: Column(
-        children: [
-          Padding(
-            padding: const EdgeInsets.all(32.0),
-            child: Text(
+      child: Padding(
+        padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 32),
+        child: Column(
+          children: [
+            Text(
               text,
-              style: Theme.of(context).textTheme.titleLarge?.copyWith(
+              style: Theme.of(context).textTheme.titleMedium?.copyWith(
                     color: Colors.white54,
+                    height: 1.3,
                   ),
             ),
-          ),
-          const EmptyContentsAnimationView(),
-        ],
+            const EmptyContentsAnimationView(),
+          ],
+        ),
       ),
     );
   }
