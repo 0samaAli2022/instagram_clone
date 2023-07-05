@@ -22,10 +22,11 @@ class PostsGridView extends StatelessWidget {
       itemBuilder: (context, index) {
         final post = posts.elementAt(index);
         return PostThumbnailView(
-            post: post,
-            onTapped: () {
-              //TODO: naviage to post detail view
-            });
+          post: post,
+          onTapped: () {
+            //TODO: naviage to post detail view
+          },
+        );
       },
     );
   }

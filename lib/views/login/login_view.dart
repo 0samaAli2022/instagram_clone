@@ -21,69 +21,71 @@ class LoginView extends ConsumerWidget {
         title: const Text(Strings.appName),
         centerTitle: true,
       ),
-      body: Builder(builder: (context) {
-        return Padding(
-          padding: const EdgeInsets.all(16.0),
-          child: SingleChildScrollView(
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.stretch,
-              children: [
-                const SizedBox(
-                  height: 20,
-                ),
-                Text(
-                  Strings.welcomeToAppName,
-                  style: Theme.of(context).textTheme.displaySmall,
-                ),
-                const DividerWithMargins(),
-                Text(
-                  Strings.logIntoYourAccount,
-                  style: Theme.of(context)
-                      .textTheme
-                      .titleMedium
-                      ?.copyWith(height: 1.5),
-                ),
-                const SizedBox(
-                  height: 20,
-                ),
-                TextButton(
-                  style: TextButton.styleFrom(
-                    backgroundColor: AppColors.loginButtonColor,
-                    foregroundColor: AppColors.loginButtonTextColor,
+      body: Builder(
+        builder: (context) {
+          return Padding(
+            padding: const EdgeInsets.all(16.0),
+            child: SingleChildScrollView(
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.stretch,
+                children: [
+                  const SizedBox(
+                    height: 20,
                   ),
-                  onPressed: () async {
-                    loadingScrean(context, str.Strings.loading);
-                    await ref
-                        .read(authStateProvider.notifier)
-                        .loginWithFacebook();
-                    Navigator.of(context).pop();
-                  },
-                  child: const FacebookButton(),
-                ),
-                const SizedBox(
-                  height: 20,
-                ),
-                TextButton(
-                  style: TextButton.styleFrom(
-                    backgroundColor: AppColors.loginButtonColor,
-                    foregroundColor: AppColors.loginButtonTextColor,
+                  Text(
+                    Strings.welcomeToAppName,
+                    style: Theme.of(context).textTheme.displaySmall,
                   ),
-                  onPressed: () async {
-                    loadingScrean(context, str.Strings.loading);
-                    await ref
-                        .read(authStateProvider.notifier)
-                        .loginWithGoogle();
-                    Navigator.of(context).pop();
-                  },
-                  child: const GoogleButton(),
-                ),
-                const DividerWithMargins(),
-                const LoginViewSignupLinks(),
-              ],
+                  const DividerWithMargins(),
+                  Text(
+                    Strings.logIntoYourAccount,
+                    style: Theme.of(context)
+                        .textTheme
+                        .titleMedium
+                        ?.copyWith(height: 1.5),
+                  ),
+                  const SizedBox(
+                    height: 20,
+                  ),
+                  TextButton(
+                    style: TextButton.styleFrom(
+                      backgroundColor: AppColors.loginButtonColor,
+                      foregroundColor: AppColors.loginButtonTextColor,
+                    ),
+                    onPressed: () async {
+                      loadingScrean(context, str.Strings.loading);
+                      await ref
+                          .read(authStateProvider.notifier)
+                          .loginWithFacebook();
+                      Navigator.of(context).pop();
+                    },
+                    child: const FacebookButton(),
+                  ),
+                  const SizedBox(
+                    height: 20,
+                  ),
+                  TextButton(
+                    style: TextButton.styleFrom(
+                      backgroundColor: AppColors.loginButtonColor,
+                      foregroundColor: AppColors.loginButtonTextColor,
+                    ),
+                    onPressed: () async {
+                      loadingScrean(context, str.Strings.loading);
+                      await ref
+                          .read(authStateProvider.notifier)
+                          .loginWithGoogle();
+                      Navigator.of(context).pop();
+                    },
+                    child: const GoogleButton(),
+                  ),
+                  const DividerWithMargins(),
+                  const LoginViewSignupLinks(),
+                ],
+              ),
             ),
-          ),
-        );
-      }),
+          );
+        },
+      ),
     );
   }
 }

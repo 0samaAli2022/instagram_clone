@@ -7,12 +7,6 @@ import 'package:instagram_clone/views/login/login_view.dart';
 import 'package:instagram_clone/views/main/main_view.dart';
 import 'firebase_options.dart';
 
-import 'dart:developer' as devtools show log;
-
-extension Log on Object {
-  void log() => devtools.log(toString());
-}
-
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp(

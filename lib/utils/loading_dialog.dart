@@ -11,7 +11,7 @@ Widget? loadingScrean(BuildContext context, String text) {
           mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-             const CircularProgressIndicator(
+            const CircularProgressIndicator(
               color: Colors.white,
             ),
             const SizedBox(

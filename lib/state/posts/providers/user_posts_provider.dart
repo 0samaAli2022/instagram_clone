@@ -19,24 +19,27 @@ final userPostsProvider = StreamProvider.autoDispose<Iterable<Post>>((ref) {
       .orderBy(FireBaseFieldName.createdAt, descending: true)
       .where(PostKey.userId, isEqualTo: userId)
       .snapshots()
-      .listen((snapshots) {
-    final documents = snapshots.docs;
-    final posts = documents
-        .where(
-          (doc) => !doc.metadata.hasPendingWrites,
-        )
-        .map(
-          (doc) => Post(
-            postId: doc.id,
-            json: doc.data(),
-          ),
-        );
-    controller.sink.add(posts);
-  });
+      .listen(
+    (snapshots) {
+      final documents = snapshots.docs;
+      final posts = documents
+          .where(
+            (doc) => !doc.metadata.hasPendingWrites,
+          )
+          .map(
+            (doc) => Post(
+              postId: doc.id,
+              json: doc.data(),
+            ),
+          );
+      controller.sink.add(posts);
+    },
+  );
 
   ref.onDispose(() {
     sub.cancel();
     controller.close();
   });
+
   return controller.stream;
 });
