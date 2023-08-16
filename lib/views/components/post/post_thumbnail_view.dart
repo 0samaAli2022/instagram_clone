@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:instagram_clone/state/posts/models/posts.dart';
+import 'package:instagram_clone/state/posts/models/post.dart';
 
 class PostThumbnailView extends StatelessWidget {
   final Post post;
