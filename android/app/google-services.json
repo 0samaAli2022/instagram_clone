@@ -1,8 +1,8 @@
 {
   "project_info": {
     "project_number": "822032160446",
-    "project_id": "instagram-clone-example",
-    "storage_bucket": "instagram-clone-example.appspot.com"
+    "project_id": "instagram-clone-osama",
+    "storage_bucket": "instagram-clone-osama.appspot.com"
   },
   "client": [
     {
@@ -22,7 +22,7 @@
           }
         },
         {
-          "client_id": "822032160446-1g5qehu60f9i2sobqbuhbuai7r5t56f5.apps.googleusercontent.com",
+          "client_id": "822032160446-hqumqsqcl6o31drmo5aq5nunq6vnam92.apps.googleusercontent.com",
           "client_type": 3
         }
       ],

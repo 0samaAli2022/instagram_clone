@@ -20,12 +20,9 @@ class UserPostsView extends ConsumerWidget {
       },
       child: posts.when(
         data: (posts) {
-          if (posts.isEmpty) {
-            return const EmptyContentsWithTextAnimationView(
-                text: Strings.youHaveNoPosts);
-          } else {
-            return PostsGridView(posts: posts);
-          }
+          return posts.isEmpty
+              ? const EmptyContentsWithTextAnimationView(text: Strings.youHaveNoPosts)
+              : PostsGridView(posts: posts);
         },
         error: (error, stackTrace) {
           return const ErrorAnimationView();

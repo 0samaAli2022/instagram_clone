@@ -8,10 +8,12 @@ import 'package:instagram_clone/state/image_upload/models/thumbnail_request.dart
 import 'package:instagram_clone/state/image_upload/providers/image_uploader_provider.dart';
 import 'package:instagram_clone/state/post_settings/models/post_settings.dart';
 import 'package:instagram_clone/state/post_settings/providers/post_settings_provider.dart';
+import 'package:instagram_clone/utils/loading_dialog.dart';
+import 'package:instagram_clone/views/components/constants/strings.dart' as str;
 import 'package:instagram_clone/views/components/file_thumbnail_view.dart';
 import 'package:instagram_clone/views/constants/strings.dart';
 
-class CreateNewPostView extends StatefulHookConsumerWidget   {
+class CreateNewPostView extends StatefulHookConsumerWidget {
   final File fileToPost;
   final FileType fileType;
   const CreateNewPostView({
@@ -50,28 +52,36 @@ class _CreateNewPostViewState extends ConsumerState<CreateNewPostView> {
       appBar: AppBar(
         title: const Text(Strings.createNewPost),
         actions: [
-          IconButton(
-            onPressed: isPostButtonEnabled.value
-                ? () async {
-                    final userId = ref.read(userIdProvider);
-                    if (userId == null) {
-                      return;
-                    }
-                    final message = postController.text;
-                    final isUploaded =
-                        await ref.read(imageUploadProvider.notifier).upload(
-                              file: widget.fileToPost,
-                              fileType: widget.fileType,
-                              message: message,
-                              postSettings: postSettings,
-                              userId: userId,
-                            );
-                    if (isUploaded && mounted) {
-                      Navigator.of(context).pop();
-                    }
-                  }
-                : null,
-            icon: const Icon(Icons.send),
+          Builder(
+            builder: (context) {
+              return IconButton(
+                onPressed: isPostButtonEnabled.value
+                    ? () async {
+                        final userId = ref.read(userIdProvider);
+                        if (userId == null) {
+                          return;
+                        }
+                        final message = postController.text;
+                        loadingScrean(context, str.Strings.loading);
+                        final isUploaded =
+                            await ref.read(imageUploadProvider.notifier).upload(
+                                  file: widget.fileToPost,
+                                  fileType: widget.fileType,
+                                  message: message,
+                                  postSettings: postSettings,
+                                  userId: userId,
+                                );
+                        if (isUploaded && mounted) {
+                          // pop the loading screen
+                          Navigator.of(context).pop();
+                          // pop the create new post screen
+                          Navigator.of(context).pop();
+                        }
+                      }
+                    : null,
+                icon: const Icon(Icons.send),
+              );
+            }
           ),
         ],
       ),
