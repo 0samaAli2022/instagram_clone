@@ -1,10 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
-import 'package:instagram_clone/enums/date_sorting.dart';
 import 'package:instagram_clone/state/auth/providers/user_id_provider.dart';
 import 'package:instagram_clone/state/comments/models/posts_comments_requests.dart';
-import 'package:instagram_clone/state/comments/notifiers/send_comment_notifier.dart';
 import 'package:instagram_clone/state/comments/providers/post_comments_provider.dart';
 import 'package:instagram_clone/state/comments/providers/send_comment_provider.dart';
 import 'package:instagram_clone/state/posts/typedefs/post_id.dart';
@@ -74,6 +72,7 @@ class PostCommentView extends HookConsumerWidget {
                   }
                   return RefreshIndicator(
                     onRefresh: () {
+                      // ignore: unused_result
                       ref.refresh(postCommentsProvider(request.value));
                       return Future.delayed(
                         const Duration(

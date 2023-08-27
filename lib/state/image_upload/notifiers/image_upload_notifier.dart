@@ -87,7 +87,6 @@ class ImageUploadNotifier extends StateNotifier<IsLoading> {
         .child(fileName);
 
     try {
-      print(thumbnailRef.bucket);
       // upload the thumbnail
       final thumbnailUploadTask =
           await thumbnailRef.putData(thumbnailUint8List);

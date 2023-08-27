@@ -9,6 +9,8 @@ import 'package:instagram_clone/views/components/dialogs/alert_dialog_model.dart
 import 'package:instagram_clone/views/components/dialogs/log_out_dialog.dart';
 import 'package:instagram_clone/views/constants/strings.dart';
 import 'package:instagram_clone/views/create_new_post/create_new_post_view.dart';
+import 'package:instagram_clone/views/tabs/home/home_view.dart';
+import 'package:instagram_clone/views/tabs/search/search_view.dart';
 import 'package:instagram_clone/views/tabs/user_posts/user_posts_view.dart';
 
 class MainView extends ConsumerStatefulWidget {
@@ -36,6 +38,7 @@ class _MainViewState extends ConsumerState<MainView> {
                 if (videoFile == null) {
                   return;
                 }
+                // ignore: unused_result
                 ref.refresh(postSettingsProvider);
 
                 // go to the screen to create a new post
@@ -63,6 +66,7 @@ class _MainViewState extends ConsumerState<MainView> {
                 if (imageFile == null) {
                   return;
                 }
+                // ignore: unused_result
                 ref.refresh(postSettingsProvider);
 
                 // go to the screen to create a new post
@@ -110,8 +114,8 @@ class _MainViewState extends ConsumerState<MainView> {
         body: const TabBarView(
           children: [
             UserPostsView(),
-            UserPostsView(),
-            UserPostsView(),
+            SearchView(),
+            HomeView(),
           ],
         ),
       ),
