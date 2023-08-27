@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:instagram_clone/state/posts/models/post.dart';
 import 'package:instagram_clone/views/components/post/post_thumbnail_view.dart';
+import 'package:instagram_clone/views/post_comment/post_comment_view.dart';
 
 class PostsGridView extends StatelessWidget {
   final Iterable<Post> posts;
